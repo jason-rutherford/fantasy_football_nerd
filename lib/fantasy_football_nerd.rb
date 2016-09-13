@@ -31,7 +31,7 @@ class FFNerd
     extras = [extras].flatten
     data = request_service(service_name, api_key, extras)[json_key]
     data = data.values.flatten if data.is_a? Hash
-    data.collect { |i| OpenStruct.new(i.add_snakecase_keys) }
+    data.collect { |i| OpenStruct.new(i.add_snakecase_keys) } if data
   end
 
   def self.teams
@@ -47,7 +47,7 @@ class FFNerd
   end
 
   def self.byes(week)
-    raise "Must include a bye week between 4 and 12" unless (4..12).include?(week)
+    raise "Must include a bye week between 4 and 13" unless (4..13).include?(week)
     ostruct_request('byes', "Bye Week #{week}")
   end
 

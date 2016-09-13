@@ -44,6 +44,8 @@ class FFNerd
 
   def self.players
     ostruct_request('players', 'Players')
+  def self.weather
+    ostruct_request('weather', 'Games')
   end
 
   def self.byes(week)

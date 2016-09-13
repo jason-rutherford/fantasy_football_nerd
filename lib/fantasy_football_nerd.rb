@@ -42,8 +42,11 @@ class FFNerd
     ostruct_request('schedule', 'Schedule')
   end
 
-  def self.players
-    ostruct_request('players', 'Players')
+  def self.players(position = nil)
+    extras = [position]
+    ostruct_request('players', 'Players', extras)
+  end
+
   def self.weather
     ostruct_request('weather', 'Games')
   end
